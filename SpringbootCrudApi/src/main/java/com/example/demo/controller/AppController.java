@@ -27,25 +27,25 @@ public class AppController {
 		
 	}
 	
-	@GetMapping("/student/getAll")
+	@GetMapping("/getAll")
 	public List<Student> getAll(){
 		
 		return service.getAllStudent();
 	}
 	
-	@GetMapping("/student/{id}")
+	@GetMapping("/{id}")
 	public Student getStudent(@PathVariable("id")int id) {
 		return service.getStudentById(id);
 		
 	}
 	
-	@DeleteMapping("/student/{id}")
+	@DeleteMapping("/{id}")
 	public void deleteById(@PathVariable("id")int id) {
 		
 		service.deleteById(id);
 	}
 	
-	@PutMapping("student/{id}")
+	@PutMapping("/{id}")
 	public Student updateStudent(@PathVariable("id")int id,@RequestBody Student stu) {
 		stu.setId(id);
 		service.save(stu);
